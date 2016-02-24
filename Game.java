@@ -44,16 +44,21 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
-        basement = new Room("in the basement of the university. Here are dark,"
-                + "you hear many wiered noises and you can swear something "
-                + "touched your leg");
-        attic = new Room("in the attic of the university");
+        basement = new Room("in the basement of the university. It is dark,"
+                + "\n you hear many wiered noises and you can swear something "
+                + "\n touched your leg");
+        attic = new Room("in the attic of the university, its a longe time"
+                + "\n since someone have been here judging by the dust.");
         dorm = new Room("in the dorm where you and other students live");
-        myRoom = new Room("this is where the magic happens,"
-                + " also there is an open window you can jump out");
-        mattsRoom = new Room("in mattsRoom, no magic here");
-        commonRoom = new Room("in the common area of your dorm");
-        batheroom = new Room("in the batheroom  of your dorm");
+        myRoom = new Room("in your room, this is where the magic happens,"
+                + "\n also there is an open window you can jump out");
+        mattsRoom = new Room("in mattsRoom. No magic here, and it"
+                + "\n smells funny here");
+        commonRoom = new Room("in the common area of your dorm,"
+                + "\n there is a tv in the corner and some other"
+                + "\n students here.");
+        batheroom = new Room("in the batheroom of your dorm, it looks like"
+                + "\n someone has used your towel");
         library = new Room("in the university library");
 
          //initializing room exits for outside

@@ -44,23 +44,33 @@ public class Room
      * @param up
      * @param down
      */
-    public void setExits(Room north, Room east, Room south, Room west,
-                 Room up, Room down) 
+//    public void setExits(Room north, Room east, Room south, Room west,
+//                 Room up, Room down) 
+//    {
+//        if(north != null)
+//            exits.put("north", north);
+//        if(east != null)
+//            exits.put("east", east);
+//        if(south != null)
+//            exits.put("south", south);
+//        if(west != null)
+//            exits.put("west", west);
+//        if(up != null)
+//            exits.put("up", up);
+//        if(down != null)
+//            exits.put("down", down);
+//    }
+    
+    /**
+     * 
+     * @param direction
+     * @param neighbor 
+     */
+    public void setExit(String direction, Room neighbor)
     {
-        if(north != null)
-            exits.put("north", north);
-        if(east != null)
-            exits.put("east", east);
-        if(south != null)
-            exits.put("south", south);
-        if(west != null)
-            exits.put("west", west);
-        if(up != null)
-            exits.put("up", up);
-        if(down != null)
-            exits.put("down", down);
+        exits.put(direction, neighbor);
     }
-
+    
     /**
      * @return The description of the room.
      */
@@ -70,13 +80,15 @@ public class Room
     }
     
     /**
+     * Creates exits for each room and binds each exit to 
+     * its own direction.
      * 
      * @param direction
      * @return 
      */
     public Room getExit(String direction)
     {
-        return exits.get(direction);
+       return exits.get(direction);
     }
     
     /**

@@ -1,4 +1,4 @@
-﻿
+
 /**
  *  This class is the main class of the "World of Zuul" application.
  *  "World of Zuul" is a very simple, text based adventure game.  Users
@@ -57,20 +57,68 @@ public class Game
         library = new Room("in the university library");
 
         // initialise room exits
-        outside.setExits(dorm, theater, lab, pub, null, null);
-        theater.setExits(null, null, null, outside, library, null);
-        pub.setExits(null, outside, null, null, null, null);
-        lab.setExits(outside, office, null, null, attic, basement);
-        office.setExits(null, null, null, lab, null, null);
-        basement.setExits(null, null, null, null, pub, null);
-        attic.setExits(null, null, null, null, null, lab);
-        dorm.setExits(myRoom, commonRoom, outside, batheroom, mattsRoom, null);
-        myRoom.setExits(outside, null, dorm, null, null, null);
-        mattsRoom.setExits(null, null, null, null, null, dorm);
-        commonRoom.setExits(null, null, null, dorm, null, null);
-        batheroom.setExits(null, dorm, null, null, null, null);
-        library.setExits(null, null, null, null, null, theater);
+//        outside.setExits(dorm, theater, lab, pub, null, null);
+//        theater.setExits(null, null, null, outside, library, null);
+//        pub.setExits(null, outside, null, null, null, null);
+//        lab.setExits(outside, office, null, null, attic, basement);
+//        office.setExits(null, null, null, lab, null, null);
+//        basement.setExits(null, null, null, null, pub, null);
+//        attic.setExits(null, null, null, null, null, lab);
+//        dorm.setExits(myRoom, commonRoom, outside, batheroom, mattsRoom, null);
+//        myRoom.setExits(outside, null, dorm, null, null, null);
+//        mattsRoom.setExits(null, null, null, null, null, dorm);
+//        commonRoom.setExits(null, null, null, dorm, null, null);
+//        batheroom.setExits(null, dorm, null, null, null, null);
+//        library.setExits(null, null, null, null, null, theater);
 
+         //initializing room exits for outside
+           outside.setExit("north", dorm);
+           outside.setExit("south", lab);
+           outside.setExit("west", pub);
+           outside.setExit("east", theater);
+                      
+         //initializing room exitas for lab
+           lab.setExit("north", outside);
+           lab.setExit("west", office);
+           lab.setExit("down", basement);
+           lab.setExit("up", attic);
+           
+         //initializing exits for office
+           office.setExit("east", lab);
+           
+         //initializing exits for attic
+           attic.setExit("down", lab);
+           
+         //initialazing exits for basement
+           basement.setExit("up", pub);
+           
+         //initialazing exits for pub
+           pub.setExit("east", outside);
+           
+         //initialazing exits for theater
+           theater.setExit("west", outside);
+           theater.setExit("up", library);
+           
+         //initialazing exits for library
+           library.setExit("down", theater);
+           
+         //initialazing exits for dorm
+           dorm.setExit("north", myRoom);
+           dorm.setExit("west", batheroom);
+           dorm.setExit("east", commonRoom);
+           dorm.setExit("south", outside);
+           dorm.setExit("up", mattsRoom);
+           
+         //initializing exits for myRoom
+           myRoom.setExit("north", outside);
+           myRoom.setExit("south", dorm);
+           
+         //initializing exits for commonRoom
+          commonRoom.setExit("west", dorm);
+          
+         //initialazing exits for myRoom
+           mattsRoom.setExit("down", dorm);
+                        
         currentRoom = outside;  // start game outside
     }
 

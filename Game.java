@@ -160,10 +160,20 @@ public class Game
         if (commandWord.equals("help"))
         {
             printHelp();
-        } else if (commandWord.equals("go"))
+        } 
+        else if (commandWord.equals("go"))
         {
             goRoom(command);
-        } else if (commandWord.equals("quit"))
+        }
+        else if (commandWord.equals("look"))
+        {
+            look();
+        }
+        else if (commandWord.equals("eat"))
+        {
+            eat();
+        }
+        else if (commandWord.equals("quit"))
         {
             wantToQuit = quit(command);
         }
@@ -182,7 +192,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        System.out.println(" " + parser.showCommands());
     }
 
     /**
@@ -231,11 +241,34 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
-
+    
+    /**
+     * 
+     * @param args 
+     */
     public static void main(String[] args)
     {
         Game game = new Game();
         game.play();
 
     }
+    
+    /**
+     * Makes you look around the room and prints the exits 
+     * and items you see.
+     */
+    private void look()
+    {
+        System.out.println(currentRoom.getLongeDescription());
+    }
+    
+    /**
+     * Makes the player eat.
+     */
+    private void eat()
+    {
+        System.out.println("You have now feasted, you are no "
+                + "\n longer hungry and ready to wander about freely");
+        System.out.println();
+    }        
 }

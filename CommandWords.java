@@ -13,7 +13,7 @@ public class CommandWords
 {
     // a constant array that holds all valid command words
     private static final String[] validCommands = {
-        "go", "quit", "help"
+        "go", "quit", "help", "look", "eat"
     };
 
     /**
@@ -37,5 +37,23 @@ public class CommandWords
         }
         // if we get here, the string was not found in the commands
         return false;
+    }
+    
+    /**
+     * Returns all the valid command words in the game.
+     * 
+     * @return String with all command words 
+     */
+    public String getCommandList()
+    {
+        
+        String commands = " ";
+        
+        for (String command : validCommands)
+        {
+            commands += " " + command;
+        }
+        
+        return commands;
     }
 }

@@ -33,35 +33,10 @@ public class Room
         this.description = description;
         exits = new HashMap<String, Room>();
     }
-
-    /**
-     * Define the exits of this room.  Every direction either leads
-     * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
-     * @param up
-     * @param down
-     */
-//    public void setExits(Room north, Room east, Room south, Room west,
-//                 Room up, Room down) 
-//    {
-//        if(north != null)
-//            exits.put("north", north);
-//        if(east != null)
-//            exits.put("east", east);
-//        if(south != null)
-//            exits.put("south", south);
-//        if(west != null)
-//            exits.put("west", west);
-//        if(up != null)
-//            exits.put("up", up);
-//        if(down != null)
-//            exits.put("down", down);
-//    }
     
     /**
+     * Sotres information about wich rooms lies next to the
+     * room you are inn.
      * 
      * @param direction
      * @param neighbor 
@@ -77,6 +52,19 @@ public class Room
     public String getDescription()
     {
         return description;
+    }
+    
+    /**
+     * Return a lonmg description of this room, of the form:
+     *        You are in the kitchen.
+     *        Exits: north wesst
+     * 
+     * @return A description of hte room, including exits.
+     */
+    public String getLongeDescription()
+    {
+        return "You are " + description 
+               + ".\n" + getExitStrings();
     }
     
     /**

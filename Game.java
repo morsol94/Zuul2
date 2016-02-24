@@ -56,21 +56,6 @@ public class Game
         batheroom = new Room("in the batheroom  of your dorm");
         library = new Room("in the university library");
 
-        // initialise room exits
-//        outside.setExits(dorm, theater, lab, pub, null, null);
-//        theater.setExits(null, null, null, outside, library, null);
-//        pub.setExits(null, outside, null, null, null, null);
-//        lab.setExits(outside, office, null, null, attic, basement);
-//        office.setExits(null, null, null, lab, null, null);
-//        basement.setExits(null, null, null, null, pub, null);
-//        attic.setExits(null, null, null, null, null, lab);
-//        dorm.setExits(myRoom, commonRoom, outside, batheroom, mattsRoom, null);
-//        myRoom.setExits(outside, null, dorm, null, null, null);
-//        mattsRoom.setExits(null, null, null, null, null, dorm);
-//        commonRoom.setExits(null, null, null, dorm, null, null);
-//        batheroom.setExits(null, dorm, null, null, null, null);
-//        library.setExits(null, null, null, null, null, theater);
-
          //initializing room exits for outside
            outside.setExit("north", dorm);
            outside.setExit("south", lab);
@@ -151,14 +136,8 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println("You are " + currentRoom.getDescription());
-        printLocationInfo();
-    }
-
-    private void printLocationInfo()
-    {
-        System.out.println(" " + currentRoom.getExitStrings());
-        System.out.println();
+        System.out.println(currentRoom.getLongeDescription());
+       // printLocationInfo();
     }
 
     /**
@@ -230,8 +209,8 @@ public class Game
         } else
         {
             currentRoom = nextRoom;
-            System.out.println("You are " + currentRoom.getDescription());
-            printLocationInfo();
+            System.out.println(currentRoom.getLongeDescription());
+            
         }
     }
 

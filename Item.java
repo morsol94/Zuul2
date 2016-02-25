@@ -2,7 +2,7 @@
 /**
  * Class Item - an item in a room in an adventure game
  * 
- * This class is ppart of the "World of Zuul" application.
+ * This class is part of the "World of Zuul" application.
  * "World of Zuul" is a very simple, text based adventure game.
  * 
  *  "Item" represent one item in the scenery of a room in the game.

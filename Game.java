@@ -108,6 +108,10 @@ public class Game
           
          //initialazing exits for myRoom
            mattsRoom.setExit("down", dorm);
+           
+         //Fill rooms with items
+         
+         put.addItem(new Item ("bottle", "a cold bottle of beer", 0,33));
                         
         currentRoom = outside;  // start game outside
     }

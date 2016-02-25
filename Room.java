@@ -21,7 +21,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
-    private ItemCollection items = null;
+    private ItemCollection items;
     private Item item;
 
 
@@ -35,6 +35,7 @@ public class Room
     {
         this.description = description;
         exits = new HashMap<String, Room>();
+        items = new ItemCollection();
     }
     
     /**

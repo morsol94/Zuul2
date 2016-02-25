@@ -111,7 +111,7 @@ public class Game
            
          //Fill rooms with items
          
-           //pub.addItem(new Item("Beer", "A cold bottle of beer", 0.33));
+           pub.addItem(new Item("Beer", "A cold bottle of beer", 0.33));
                         
         currentRoom = outside;  // start game outside
     }

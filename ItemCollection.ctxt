@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ItemCollection()
+comment0.text=\r\n\ Constructer\ of\ the\ Items\ class\r\n
+comment1.params=
+comment1.target=double\ getTotalWeigth()
+comment1.text=\r\n\ Place\ an\ item\ into\ the\ collection\r\n\ \r\n\ @param\ item\ \r\n
+comment2.params=
+comment2.target=java.util.Iterator\ getAllItems()
+comment2.text=\r\n\ Returns\ the\ values\ to\ all\ the\ items\ in\ the\ collection.\r\n\ \r\n\ @return\ value\ \r\n
+comment3.params=item
+comment3.target=void\ putItem(Item)
+comment3.text=\r\n\ Adding\ an\ item\ to\ the\ itemCollection.\r\n\ \r\n\ @param\ item\:\ of\ the\ class\ Item\ \r\n
+comment4.params=
+comment4.target=int\ getNumberOfitems()
+comment4.text=\r\n\ Returns\ the\ number\ of\ Items\ in\ the\ collection\r\n\ \r\n\ @return\ number\ of\ items.\ \r\n
+numComments=5

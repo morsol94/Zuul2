@@ -1,5 +1,6 @@
 
 import java.util.HashMap;
+import java.util.Iterator;
  
 /**
  * Class Items - an collection of items.
@@ -20,7 +21,8 @@ public class ItemCollection
      */
     public ItemCollection()
     {
-        itemCollection = new HashMap<String, Item>();
+        itemCollection = new HashMap<>();
+        
     }
     
     /**
@@ -28,10 +30,10 @@ public class ItemCollection
      * 
      * @param item 
      */
-    public void putItem( Item item )
-    {
-        itemCollection.put(item.getName(), item);
-    }
+//    public void putItem( Item item )
+//    {
+//        itemCollection.put(item.getName(), item);
+//    }
     
     
     public double getTotalWeigth()
@@ -44,4 +46,37 @@ public class ItemCollection
         
         return totalWeigth;
     }
+    
+    /**
+     * Returns the values to all the items in the collection.
+     * 
+     * @return value 
+     */
+    public Iterator<Item> getAllItems()
+    {
+        return this.itemCollection.values().iterator();
+        
+    }
+    
+    /**
+     * Adding an item to the itemCollection.
+     * 
+     * @param item: of the class Item 
+     */
+    public void putItem(Item item)
+    {
+        itemCollection.put(item.getName(), item);
+    }
+    
+    /**
+     * Returns the number of Items in the collection
+     * 
+     * @return number of items. 
+     */
+    public int getNumberOfitems()
+    {
+        return itemCollection.size();
+    }
+    
+    
 }

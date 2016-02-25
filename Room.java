@@ -22,6 +22,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;
     private ItemCollection items = null;
+    private Item item;
 
 
     /**
@@ -65,10 +66,25 @@ public class Room
      */
     public String getLongeDescription()
     {
-        return "You are " + description 
-               + ".\n" + getExitStrings()
-               + "\n"  + item.getItemDetails();
-     
+        String longDsc = "You are ";    
+              longDsc += this.description;
+              longDsc += ".\n" + getExitStrings();
+                
+        if(0 == items.getNumberOfitems())
+        {
+            longDsc += "\nThere is no items in this room.";
+        }
+        else
+        {
+            longDsc +="\nitem: ";
+            Iterator<Item> it = items.getAllItems();
+            while(it.hasNext())
+            {
+                Item item = it.next();
+                longDsc += item.getItemDetails() + " ";
+            }
+        }
+        return longDsc;
     }
     
     /**
@@ -92,19 +108,23 @@ public class Room
     {
 
         String returnString = "Exits: ";
-        Set<String> keys = exits.keySet();
-        for(Iterator<String> iter = keys.iterator(); iter.hasNext();)
-        {
-            returnString += " " + iter.hasNext();
+        Iterator<String> dirIt = exits.keySet().iterator();
+        while(dirIt.hasNext())
+        {            
+            returnString += dirIt.next() + " ";
         }
         
         return returnString;
     }
     
-    
+    /**
+     *  Adds an item
+     * @param item 
+     */
     public void addItem(Item item)
     {
-        this.item = item;
+        
+       items.putItem(item);
     }
 
 }

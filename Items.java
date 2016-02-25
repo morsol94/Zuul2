@@ -11,4 +11,6 @@
 public class Items
 {
     
+    
+    //Test kommentar for å vise.
 }

@@ -20,6 +20,8 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
+    private Item item = null;
+    private HashMap<String, Item> items = null;
 
 
     /**
@@ -55,7 +57,7 @@ public class Room
     }
     
     /**
-     * Return a lonmg description of this room, of the form:
+     * Return a long description of this room, of the form:
      *        You are in the kitchen.
      *        Exits: north wesst
      * 
@@ -64,7 +66,9 @@ public class Room
     public String getLongeDescription()
     {
         return "You are " + description 
-               + ".\n" + getExitStrings();
+               + ".\n" + getExitStrings()
+               + "\n"  + item.getItemDetails();
+     
     }
     
     /**
@@ -94,6 +98,12 @@ public class Room
         }
         
         return returnString;
+    }
+    
+    
+    public void addItem(Item item)
+    {
+        this.item = item;
     }
 
 }

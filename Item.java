@@ -15,8 +15,8 @@
  */
 public class Item
 {
-    private String description;  //Longer description of the object.
     private String name;    //One word name.
+    private String description;  //Longer description of the object.
     private double weigth;  //weigth of the item in Kg.
     
     
@@ -35,6 +35,7 @@ public class Item
         this.weigth = weigth;
     }
     
+    
     /**
      * Returns the name of the item
      * 
@@ -42,7 +43,7 @@ public class Item
      */
     public String getName()
     {
-        return name;
+        return this.name;
     }
     
     /**
@@ -52,7 +53,7 @@ public class Item
      */
     public String getDescription()
     {
-        return description;
+        return this.description;
     }
     
     /**
@@ -62,6 +63,17 @@ public class Item
      */
     public double getWeigth()
     {
-        return weigth;
+        return this.weigth;
+    }
+    
+    /**
+     * Returns the full details of the item; Name, Description,
+     * and Weigth in KG.
+     * 
+     * @return The Name, Description, and weight in Kg.
+     */
+    public String getItemDetails()
+    {
+        return this.getName()+ " - " + this.getDescription()+ " - " + this.getWeigth() +"Kg";
     }
 }

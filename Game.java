@@ -46,8 +46,8 @@ public class Game
         outside = new Room("outside the main entrance of the university");
         theater = new Room("in a lecture theater");
         pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        lab = new Room("in a chemestry lab");
+        office = new Room("in the chemestry admin office");
         basement = new Room("in the basement of the university. It is dark,"
                 + "\n you hear many wiered noises and you can swear something "
                 + "\n touched your leg");
@@ -114,9 +114,65 @@ public class Game
            mattsRoom.setExit("down", dorm);
            
          //Fill rooms with items
-         
-           pub.addItem(new Item("Beer", "A cold bottle of beer", 0.33));
-                        
+         //TODO: add items
+           pub.addItem(new Item("\n" + "Beer", "A cold bottle of beer", 0.33));
+           pub.addItem(new Item("\n" + "IPA", "A nice bottle of IPA", 0.5));
+           pub.addItem(new Item("\n" + "Glass","A pint glass",0.2));
+           pub.addItem(new Item("\n" + "Yngve", "a person named ynge he tells"
+                   + "you that you was here last night", 60 ));
+           
+           outside.addItem(new Item("\n" + "Statue","A tall statue of the first"
+                   + " principal", 500));
+           
+           lab.addItem(new Item("\n" + "Meth", "A batch of crystall math", 0.5));
+           lab.addItem(new Item("\n" + "bottle", "Clean chemestry bottles", 0.3));
+           lab.addItem(new Item("\n" + "coat", "A white lab coat", 1.0));
+           
+           office.addItem(new Item("\n" + "penn", "A golden penn", 0.4));
+           office.addItem(new Item("\n" + "stappler", "A stappler machin", 0.7));
+           office.addItem(new Item("\n" + "Ole","Ole Martin", 80));
+           
+           attic.addItem(new Item("\n" + "mirror", "A dusty hand hell mirror", 1.5));
+           attic.addItem(new Item("\n" + "omar", "A dusty person named Omar, "
+                   + "he tells you to go to the library and find The Book"
+                   +  " of Thosend Throutes.", 90));
+           
+           theater.addItem(new Item("\n" + "Macbook", "A new macBook Pro standing"
+                   + " on the teacher's desk", 2));
+           theater.addItem(new Item("\n" + "Bottle", "A water bottle", 0.15));
+           
+           library.addItem(new Item("\n" + "Java123", "Book named Java123", 7));
+           library.addItem(new Item("\n" + "BlueJ", "Book named OOP with BlueJ", 2.5));
+           library.addItem(new Item("\n" + "Cooking", "cook book named cooking", 4));
+           library.addItem(new Item("\n" + "Electronics", "Book about electronics", 6));
+           library.addItem(new Item("\n" + "BoTT", "BoTT short for Book of Thousend "
+                   + " Thruts", 5));
+           library.addItem(new Item("\n" + "Selfies", "book of selfies", 3));
+           library.addItem(new Item("\n" + "Meth123", "book about how to cook meth", 9));
+           library.addItem(new Item("\n" + "Glasses", "forgotten flasses", 0.3));
+           
+           dorm.addItem(new Item("\n" + "Matt", "Matt greats you hello", 85));
+           
+           myRoom.addItem(new Item("\n" + "Wallet", "an empty wallet with the impression"
+                   + "of a condom in the skin", 0.25));
+           myRoom.addItem(new Item("\n" + "Phone", "Phone with broken screen and 3 unseen"
+                   + " snap's on it", 0.35));
+           myRoom.addItem(new Item("\n" + "Notebook", "Notebook with someting unreadable"
+                   + " scribbled inside", 0.4));
+           myRoom.addItem(new Item("\n" + "Headphones", "a pair of old sennheiser's "
+                   + "headphones", 1.7));
+           
+           mattsRoom.addItem(new Item("\n" + "joint", "A half smoken joint", 0.003));
+           mattsRoom.addItem(new Item("\n" + "Socks", "A pair of dirty socks", 0.7));
+           mattsRoom.addItem(new Item("\n" + "Weights", "A 20Kg weight", 20));
+           mattsRoom.addItem(new Item("\n" + "Photo", "A photo of Matt's mom", 0.7));
+           
+           commonRoom.addItem(new Item("\n" + "TV", "A flatscreen TV", 7.5));
+           
+           batheroom.addItem(new Item("\n" + "Toothbrush", "your toothbrush", 0.2));
+           batheroom.addItem(new Item("\n" + "Toiletbrush", "A toilet brush", 0.8));
+           
+                   
         currentRoom = outside;  // start game outside
     }
 

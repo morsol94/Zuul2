@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 /**
  *  This class is the main class of the "World of Zuul" application.
@@ -21,6 +22,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Room previousRoom;
+    private Stack<Room> rommsVissited;
 
     /**
      * Create the game and initialise its internal map.
@@ -29,6 +31,7 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        rommsVissited = new Stack<Room>();
     }
 
     /**
@@ -146,7 +149,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println(currentRoom.getLongeDescription());
+        printLocationInfo();
        // printLocationInfo();
     }
 
@@ -232,9 +235,10 @@ public class Game
             System.out.println("There is no door!");
         } else
         {
+            rommsVissited.push(currentRoom);
             previousRoom = currentRoom;
             currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongeDescription());
+            printLocationInfo();
             
         }
     }
@@ -274,7 +278,7 @@ public class Game
      */
     private void look()
     {
-        System.out.println(currentRoom.getLongeDescription());
+        printLocationInfo();
     }
     
     /**
@@ -287,14 +291,17 @@ public class Game
         System.out.println();
     }
     
-    
-    public void goBack()
+    /**
+     * Takes the player back to the previous room he was in and set the
+     * room he was in before he wrote back to previous room.
+     */
+    private void goOneBack()
     {
        Room nextPreviousRoom = currentRoom;
         if (previousRoom != null && previousRoom != currentRoom)
         {
         currentRoom = previousRoom;        
-        System.out.println(currentRoom.getLongeDescription());
+            printLocationInfo();
         }
         else
         {
@@ -303,5 +310,24 @@ public class Game
         
         previousRoom = nextPreviousRoom;
 
+    }
+    
+    private void goBack()
+    {
+        if (rommsVissited.empty())
+        {
+            System.out.println("You are at the start point");
+        }
+        else 
+        {
+            currentRoom = rommsVissited.pop();
+            printLocationInfo();
+        }
+        
+    }
+
+    private void printLocationInfo()
+    {
+        System.out.println(currentRoom.getLongeDescription());
     }
 }

@@ -128,6 +128,21 @@ public class Room
        items.putItem(item);
     }
     
+    /**
+     * Gets the item from the item collection and is used to add it to the
+     * player
+     * 
+     * @param keyWord
+     * @return 
+     */
+    public Item getItem(String keyWord)
+    {
+        return items.getItem(keyWord);
+    }
     
-
+    public void removeItem(String keyWord)
+    {
+        items.removeItem(keyWord);
+    }
+    
 }

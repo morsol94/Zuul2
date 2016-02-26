@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import java.util.Stack;
 
 
@@ -19,6 +20,7 @@ public class Player
     private Room playerCurrentRoom;
     private Room playerPreviousRoom;
     private Stack<Room> rommsVissited;
+    private HashMap<String, Item> backPack;
        
     /**
      * Creates the player and starts the game. Also takes in the name
@@ -31,6 +33,7 @@ public class Player
         this.playerName = name;
         this.rommsVissited = new Stack<Room>();
         this.playerCurrentRoom = currentRoom;
+        this.backPack = new HashMap<>();
     }
     
       /**
@@ -136,4 +139,39 @@ public class Player
          this.playerPreviousRoom = nextPreviousRoom;
 
      }
+      
+    public void takeItem(Command command)
+    {
+        
+         if (!command.hasSecondWord())
+        {
+            // if there is no second word, we don't know where to go...
+            System.out.println("What item?");
+            return;
+        }
+                 
+        Item selectedItem;
+        selectedItem = playerCurrentRoom.getItem(command.getSecondWord());
+        
+        if (selectedItem != null)
+        {
+            backPack.put(selectedItem.getName(), selectedItem);
+            playerCurrentRoom.removeItem(command.getSecondWord());
+            
+            System.out.println("You have picked up" + command.getSecondWord());
+        }
+        else
+        {
+            System.out.println("hata livet!");
+        }
+    }
+    
+    
+    public void dropItem()
+    {
+        
+    }
+    
+
+    
 }

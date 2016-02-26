@@ -115,13 +115,13 @@ public class Game
            
          //Fill rooms with items
          //TODO: add items
-           pub.addItem(new Item("\n" + "Beer", "A cold bottle of beer", 0.33));
-           pub.addItem(new Item("\n" + "IPA", "A nice bottle of IPA", 0.5));
-           pub.addItem(new Item("\n" + "Glass","A pint glass",0.2));
-           pub.addItem(new Item("\n" + "Yngve", "a person named ynge he tells"
+           pub.addItem(new Item("\n" + "beer", "A cold bottle of beer", 0.33));
+           pub.addItem(new Item("\n" + "ipa", "A nice bottle of IPA", 0.5));
+           pub.addItem(new Item("\n" + "glass","A pint glass",0.2));
+           pub.addItem(new Item("\n" + "yngve", "a person named ynge he tells"
                    + "you that you was here last night", 60 ));
            
-           outside.addItem(new Item("\n" + "Statue","A tall statue of the first"
+           outside.addItem(new Item("\n" + "statue","A tall statue of the first"
                    + " principal", 500));
            
            lab.addItem(new Item("\n" + "Meth", "A batch of crystall math", 0.5));
@@ -244,6 +244,14 @@ public class Game
         else if (commandWord.equals("eat"))
         {
             player.eat();
+        }
+        else if (commandWord.equals("take"))
+        {
+            player.takeItem(command);
+        }
+        else if (commandWord.equals("drop"))
+        {
+            player.dropItem();
         }
         else if (commandWord.equals("quit"))
         {

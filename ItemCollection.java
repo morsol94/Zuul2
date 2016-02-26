@@ -78,5 +78,14 @@ public class ItemCollection
         return itemCollection.size();
     }
     
+    public Item getItem(String keyWord)
+    {
+        return itemCollection.get(keyWord);
+    }
+    
+    public void removeItem(String keyWord)
+    {
+        itemCollection.remove(keyWord);
+    }
     
 }

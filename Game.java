@@ -19,19 +19,19 @@ import java.util.Stack;
 public class Game
 {
 
+    private Player player;
     private Parser parser;
     private Room currentRoom;
-    private Room previousRoom;
-    private Stack<Room> rommsVissited;
 
     /**
      * Create the game and initialise its internal map.
      */
     public Game()
     {
+        
         createRooms();
         parser = new Parser();
-        rommsVissited = new Stack<Room>();
+        player = new Player("Kniven", currentRoom);
     }
 
     /**
@@ -149,8 +149,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        printLocationInfo();
-       // printLocationInfo();
+        player.printLocationInfo();
     }
 
     /**
@@ -176,19 +175,19 @@ public class Game
         } 
         else if (commandWord.equals("go"))
         {
-            goRoom(command);
+            player.goRoom(command);
         }
         else if (commandWord.equals("back"))
         {
-            goBack();
+            player.goBack();
         }
         else if (commandWord.equals("look"))
         {
-            look();
+            player.look();
         }
         else if (commandWord.equals("eat"))
         {
-            eat();
+            player.eat();
         }
         else if (commandWord.equals("quit"))
         {
@@ -212,36 +211,7 @@ public class Game
         System.out.println(" " + parser.showCommands());
     }
 
-    /**
-     * Try to go in one direction. If there is an exit, enter the new room,
-     * otherwise print an error message.
-     */
-    private void goRoom(Command command)
-    {
-        if (!command.hasSecondWord())
-        {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null)
-        {
-            System.out.println("There is no door!");
-        } else
-        {
-            rommsVissited.push(currentRoom);
-            previousRoom = currentRoom;
-            currentRoom = nextRoom;
-            printLocationInfo();
-            
-        }
-    }
+    
 
     /**
      * "Quit" was entered. Check the rest of the command to see whether we
@@ -272,71 +242,5 @@ public class Game
 
     }
     
-    /**
-     * Makes you look around the room and prints the exits 
-     * and items you see.
-     */
-    private void look()
-    {
-        printLocationInfo();
-    }
-    
-    /**
-     * Makes the player eat.
-     */
-    private void eat()
-    {
-        System.out.println("You have now feasted, you are no "
-                + "\n longer hungry and ready to wander about freely");
-        System.out.println();
-    }
-    
-    /**
-     * Takes the player back to the previous room he was in and set the
-     * room he was in before he wrote back to previous room.
-     */
-    private void goOneBack()
-    {
-       Room nextPreviousRoom = currentRoom;
-        if (previousRoom != null && previousRoom != currentRoom)
-        {
-        currentRoom = previousRoom;        
-            printLocationInfo();
-        }
-        else
-        {
-            System.out.println("You have not been in any room before this one");
-        }
-        
-        previousRoom = nextPreviousRoom;
 
-    }
-    
-    /**
-     * Uses an stack class to store the rooms the player have visited, 
-     * and when using the back function it returns the player to the
-     * previous room and delete it from the stack and moves the room
-     * stored under to the top.
-     */
-    private void goBack()
-    {
-        if (rommsVissited.empty())
-        {
-            System.out.println("You are at the start point");
-        }
-        else 
-        {
-            currentRoom = rommsVissited.pop();
-            printLocationInfo();
-        }
-        
-    }
-
-    /**
-     * prints out the getLongDescription methode from the Room class.
-     */
-    private void printLocationInfo()
-    {
-        System.out.println(currentRoom.getLongeDescription());
-    }
 }

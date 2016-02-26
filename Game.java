@@ -312,6 +312,12 @@ public class Game
 
     }
     
+    /**
+     * Uses an stack class to store the rooms the player have visited, 
+     * and when using the back function it returns the player to the
+     * previous room and delete it from the stack and moves the room
+     * stored under to the top.
+     */
     private void goBack()
     {
         if (rommsVissited.empty())
@@ -326,6 +332,9 @@ public class Game
         
     }
 
+    /**
+     * prints out the getLongDescription methode from the Room class.
+     */
     private void printLocationInfo()
     {
         System.out.println(currentRoom.getLongeDescription());

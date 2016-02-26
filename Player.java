@@ -153,16 +153,16 @@ public class Player
         Item selectedItem;
         selectedItem = playerCurrentRoom.getItem(command.getSecondWord());
         
-        if (selectedItem != null)
+        if (null == selectedItem)
         {
+            System.out.println("hata livet!");
+        }
+        else
+        {          
             backPack.put(selectedItem.getName(), selectedItem);
             playerCurrentRoom.removeItem(command.getSecondWord());
             
             System.out.println("You have picked up" + command.getSecondWord());
-        }
-        else
-        {
-            System.out.println("hata livet!");
         }
     }
     

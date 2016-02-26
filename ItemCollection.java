@@ -80,7 +80,7 @@ public class ItemCollection
     
     public Item getItem(String keyWord)
     {
-        return itemCollection.get(keyWord);
+        return this.itemCollection.get(keyWord);
     }
     
     public void removeItem(String keyWord)

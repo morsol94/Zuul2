@@ -123,8 +123,7 @@ public class Room
      * @param item 
      */
     public void addItem(Item item)
-    {
-        
+    {        
        items.putItem(item);
     }
     
@@ -137,7 +136,7 @@ public class Room
      */
     public Item getItem(String keyWord)
     {
-        return items.getItem(keyWord);
+        return this.items.getItem(keyWord);
     }
     
     public void removeItem(String keyWord)

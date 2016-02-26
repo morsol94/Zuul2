@@ -20,6 +20,7 @@ public class Game
 
     private Parser parser;
     private Room currentRoom;
+    private Room previousRoom;
 
     /**
      * Create the game and initialise its internal map.
@@ -174,6 +175,10 @@ public class Game
         {
             goRoom(command);
         }
+        else if (commandWord.equals("back"))
+        {
+            goBack();
+        }
         else if (commandWord.equals("look"))
         {
             look();
@@ -227,6 +232,7 @@ public class Game
             System.out.println("There is no door!");
         } else
         {
+            previousRoom = currentRoom;
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongeDescription());
             
@@ -279,5 +285,23 @@ public class Game
         System.out.println("You have now feasted, you are no "
                 + "\n longer hungry and ready to wander about freely");
         System.out.println();
-    }        
+    }
+    
+    
+    public void goBack()
+    {
+       Room nextPreviousRoom = currentRoom;
+        if (previousRoom != null && previousRoom != currentRoom)
+        {
+        currentRoom = previousRoom;        
+        System.out.println(currentRoom.getLongeDescription());
+        }
+        else
+        {
+            System.out.println("You have not been in any room before this one");
+        }
+        
+        previousRoom = nextPreviousRoom;
+
+    }
 }

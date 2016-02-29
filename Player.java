@@ -146,7 +146,7 @@ public class Player
          if (!command.hasSecondWord())
         {
             // if there is no second word, we don't know where to go...
-            System.out.println("What item?");
+            System.out.println("does not compute");
             return;
         }
                  
@@ -158,7 +158,7 @@ public class Player
             System.out.println("hata livet!");
         }
         else
-        {          
+        {         
             backPack.put(selectedItem.getName(), selectedItem);
             playerCurrentRoom.removeItem(command.getSecondWord());
             

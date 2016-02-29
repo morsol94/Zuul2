@@ -78,10 +78,12 @@ public class ItemCollection
         return itemCollection.size();
     }
     
+    
     public Item getItem(String keyWord)
     {
         return this.itemCollection.get(keyWord);
     }
+    
     
     public void removeItem(String keyWord)
     {

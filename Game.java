@@ -123,6 +123,8 @@ public class Game
            
            outside.addItem(new Item("\n" + "statue","A tall statue of the first"
                    + " principal", 500));
+           outside.addItem(new Item("\n" + "fotball", "An real fotball, not an"
+                   + "wiered american fotball", 0.7));
            
            lab.addItem(new Item("\n" + "Meth", "A batch of crystall math", 0.5));
            lab.addItem(new Item("\n" + "bottle", "Clean chemestry bottles", 0.3));

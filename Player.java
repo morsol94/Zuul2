@@ -150,8 +150,8 @@ public class Player
             return;
         }
                  
-        Item selectedItem;       
-        selectedItem = this.playerCurrentRoom.getItem(command.getSecondWord());
+        
+         Item selectedItem = this.playerCurrentRoom.getItem(command.getSecondWord());
         
 //        if (null == selectedItem)
 //        {

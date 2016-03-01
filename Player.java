@@ -21,7 +21,7 @@ public class Player
     private Room playerPreviousRoom;
     private Stack<Room> rommsVissited;
     private HashMap<String, Item> backPack;
-       
+    
     /**
      * Creates the player and starts the game. Also takes in the name
      * of the player.
@@ -146,24 +146,24 @@ public class Player
          if (!command.hasSecondWord())
         {
             // if there is no second word, we don't know where to go...
-            System.out.println("does not compute");
+            System.out.println("pick up what?");
             return;
         }
                  
-        Item selectedItem;
-        selectedItem = playerCurrentRoom.getItem(command.getSecondWord());
+        Item selectedItem;       
+        selectedItem = this.playerCurrentRoom.getItem(command.getSecondWord());
         
-        if (null == selectedItem)
-        {
-            System.out.println("hata livet!");
-        }
-        else
-        {         
+//        if (null == selectedItem)
+//        {
+//            System.out.println("no item by that name exist in this room");
+//        }
+//        else
+//        {         
             backPack.put(selectedItem.getName(), selectedItem);
-            playerCurrentRoom.removeItem(command.getSecondWord());
+            this.playerCurrentRoom.removeItem(command.getSecondWord());
             
             System.out.println("You have picked up" + command.getSecondWord());
-        }
+//        }
     }
     
     

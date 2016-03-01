@@ -51,7 +51,7 @@ public class Command
      */
     public String getSecondWord()
     {
-        return secondWord;
+        return this.secondWord;
     }
 
     /**

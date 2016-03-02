@@ -78,16 +78,30 @@ public class ItemCollection
         return itemCollection.size();
     }
     
-    
+    /**
+     * 
+     * 
+     * @param keyWord
+     * @return 
+     */
     public Item getItem(String keyWord)
     {
         return this.itemCollection.get(keyWord);
     }
     
-    
+    /**
+     * Removes aa item with the given keyword from the collection 
+     * 
+     * @param keyWord 
+     */
     public void removeItem(String keyWord)
     {
         itemCollection.remove(keyWord);
+    }
+    
+    public double getItemWeigth (Item item)
+    {
+        return item.getWeigth();
     }
     
 }

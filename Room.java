@@ -119,7 +119,8 @@ public class Room
     }
     
     /**
-     *  Adds an item
+     * Adds an item to the item collection to a spesific room 
+     *
      * @param item 
      */
     public void addItem(Item item)
@@ -139,9 +140,31 @@ public class Room
         return this.items.getItem(keyWord);
     }
     
+    
+    /**
+     * Removes a spesific item from a the item collection to the
+     * room you are in
+     * 
+     * @param keyWord 
+     */
     public void removeItem(String keyWord)
     {
         items.removeItem(keyWord);
     }
+    
+    /**
+     * Gets the weigt of a spesific item in a specfic item colection
+     * in kg.
+     * 
+     * @param item
+     * @return Weigth of the item in KG
+     */
+    public double getItemWeigth(Item item)
+    {
+        return items.getItemWeigth(item);
+    }
+            
+          
+           
     
 }

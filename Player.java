@@ -21,7 +21,6 @@ public class Player
     private Room playerPreviousRoom;
     private Stack<Room> rommsVissited;
     private HashMap<String, Item> backPack;
-    private double totalWeigth;
        
     /**
      * Creates the player and starts the game. Also takes in the name
@@ -35,7 +34,6 @@ public class Player
         this.rommsVissited = new Stack<Room>();
         this.playerCurrentRoom = currentRoom;
         this.backPack = new HashMap<>();
-        this.totalWeigth = 0;
     }
     
       /**
@@ -159,20 +157,24 @@ public class Player
         {
             System.out.println("no item by that name exist in this room");
         }
-        else if (getTotalWeigth() > weigthLimit)
+        else 
         {
+            double backPackWeigth = getTotalWeigthOfBackpack();
+            double itemWeigth = playerCurrentRoom.getItemWeigth(selectedItem);
             
-        }
-        else (getTotalWeigth() <= weigthLimit && )
-        {
-                    
- 
-                 {         
-                    backPack.put(selectedItem.getName(), selectedItem);
-                    this.playerCurrentRoom.removeItem(command.getSecondWord());
+            if (backPackWeigth + itemWeigth <= weigthLimit) 
+            {         
+                backPack.put(selectedItem.getName(), selectedItem);
+                this.playerCurrentRoom.removeItem(command.getSecondWord());
             
-                    System.out.println("You have picked up " + command.getSecondWord());
-                 }
+                System.out.println("You have picked up " + command.getSecondWord());
+            }
+            else 
+            {
+                System.out.println("You dont have the capacity to carry this much "
+                            + "weigth, drop something from your backPack if "
+                            + "you want to carry this item");
+            }
         
         }
     }
@@ -203,12 +205,13 @@ public class Player
         
     }
     
-        private double getTotalWeigth()
+    private double getTotalWeigthOfBackpack()
     {
+        double totalWeigth = 0;
         
         for (Item item : backPack.values())
         {
-          totalWeigth += item.getWeigth();
+            totalWeigth += item.getWeigth();
         }
         
         return totalWeigth;

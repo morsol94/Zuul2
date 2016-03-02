@@ -253,7 +253,7 @@ public class Game
         }
         else if (commandWord.equals("drop"))
         {
-            player.dropItem();
+            player.dropItem(command);
         }
         else if (commandWord.equals("quit"))
         {

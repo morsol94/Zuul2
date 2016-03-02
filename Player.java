@@ -21,7 +21,8 @@ public class Player
     private Room playerPreviousRoom;
     private Stack<Room> rommsVissited;
     private HashMap<String, Item> backPack;
-    
+    private double totalWeigth;
+       
     /**
      * Creates the player and starts the game. Also takes in the name
      * of the player.
@@ -34,6 +35,7 @@ public class Player
         this.rommsVissited = new Stack<Room>();
         this.playerCurrentRoom = currentRoom;
         this.backPack = new HashMap<>();
+        this.totalWeigth = 0;
     }
     
       /**
@@ -128,7 +130,7 @@ public class Player
          Room nextPreviousRoom = this.playerCurrentRoom;
          if (this.playerPreviousRoom != null && this.playerPreviousRoom != this.playerCurrentRoom)
          {
-         this.playerCurrentRoom = this.playerPreviousRoom;        
+            this.playerCurrentRoom = this.playerPreviousRoom;        
             printLocationInfo();
          }
          else
@@ -157,19 +159,59 @@ public class Player
         {
             System.out.println("no item by that name exist in this room");
         }
-        else
-        {         
-            backPack.put(selectedItem.getName(), selectedItem);
-            this.playerCurrentRoom.removeItem(command.getSecondWord());
+        else if (getTotalWeigth() > weigthLimit)
+        {
             
-            System.out.println("You have picked up " + command.getSecondWord());
+        }
+        else (getTotalWeigth() <= weigthLimit && )
+        {
+                    
+ 
+                 {         
+                    backPack.put(selectedItem.getName(), selectedItem);
+                    this.playerCurrentRoom.removeItem(command.getSecondWord());
+            
+                    System.out.println("You have picked up " + command.getSecondWord());
+                 }
+        
         }
     }
     
     
-    public void dropItem()
+    public void dropItem(Command command)
+    {
+        if (!command.hasSecondWord())
+        {
+            System.out.println("drop what?");
+            return; 
+        }
+        
+        Item selectedItem = this.backPack.get(command.getSecondWord());
+        
+        if (null == selectedItem)
+        {
+            System.out.println("There is no item by that name in your backpack");
+        }       
+        else
+        {
+            this.playerCurrentRoom.addItem(selectedItem);
+            this.backPack.remove(command.getSecondWord());
+         
+            
+            System.out.println("You have droped " + command.getSecondWord());
+        }
+        
+    }
+    
+        private double getTotalWeigth()
     {
         
+        for (Item item : backPack.values())
+        {
+          totalWeigth += item.getWeigth();
+        }
+        
+        return totalWeigth;
     }
     
 

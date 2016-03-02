@@ -82,7 +82,7 @@ public class Room
             while(it.hasNext())
             {
                 Item item = it.next();
-                longDsc += item.getItemDetails() + " ";
+                longDsc += "\n" + item.getItemDetails() + " ";
             }
         }
         return longDsc;

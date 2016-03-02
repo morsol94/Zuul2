@@ -162,7 +162,7 @@ public class Player
             backPack.put(selectedItem.getName(), selectedItem);
             this.playerCurrentRoom.removeItem(command.getSecondWord());
             
-            System.out.println("You have picked up" + command.getSecondWord());
+            System.out.println("You have picked up " + command.getSecondWord());
 //        }
     }
     

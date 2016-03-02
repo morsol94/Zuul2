@@ -153,17 +153,17 @@ public class Player
         
          Item selectedItem = this.playerCurrentRoom.getItem(command.getSecondWord());
         
-//        if (null == selectedItem)
-//        {
-//            System.out.println("no item by that name exist in this room");
-//        }
-//        else
-//        {         
+        if (null == selectedItem)
+        {
+            System.out.println("no item by that name exist in this room");
+        }
+        else
+        {         
             backPack.put(selectedItem.getName(), selectedItem);
             this.playerCurrentRoom.removeItem(command.getSecondWord());
             
             System.out.println("You have picked up " + command.getSecondWord());
-//        }
+        }
     }
     
     

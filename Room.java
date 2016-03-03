@@ -14,7 +14,7 @@ import java.util.Iterator;
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
- * @author  Michael Kölling and David J. Barnes
+ * @author  Morten Solli
  * @version 2011.07.31
  */
 public class Room 

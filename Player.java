@@ -66,14 +66,37 @@ public class Player
     }
     
     
-        /**
+     /**
      * Makes the player eat.
      */
-    public void eat()
+    public void consume(Command command)
     {
-        System.out.println("You have now feasted, you are no "
-                + "\n longer hungry and ready to wander about freely");
-        System.out.println();
+        if (!command.hasSecondWord())
+        {
+            // if there is no second word, we don't know where to go...
+            System.out.println("consume what?");
+            return;
+        }
+            
+        Item edibleItem = this.playerCurrentRoom.getItem(command.getSecondWord());
+            
+        
+        if (edibleItem.isEdible() == false)
+        {
+            System.out.println("\nYou can not eat this item");
+        }
+        else
+        {
+            System.out.println("You have consumed " + edibleItem.getName() 
+                             + ". " + edibleItem.getEatEffect() );
+            this.playerCurrentRoom.removeItem(command.getSecondWord());
+            
+            if (edibleItem.getName().equals("cookie"))
+            {
+                this.weigthLimit += 5;
+            }
+        
+        }
     }
     
     /**
@@ -307,6 +330,5 @@ public class Player
     {
         return backPack.size();
     }
-    
     
 }

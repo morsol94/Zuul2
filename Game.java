@@ -115,64 +115,73 @@ public class Game
            
          //Fill rooms with items
          //TODO: add items
-           pub.addItem(new Item("beer", "A cold bottle of beer", 0.33));
-           pub.addItem(new Item("ipa", "A nice bottle of IPA", 0.5));
-           pub.addItem(new Item("glass","A pint glass",0.2));
+           pub.addItem(new Item("beer", "A cold bottle of beer", 0.33, true, "you feel tipsy"));
+           pub.addItem(new Item("ipa", "A nice bottle of IPA", 0.5, true, "you feel tipsy"));
+           pub.addItem(new Item("glass","A pint glass",0.2, false, ""));
            pub.addItem(new Item("yngve", "a person named ynge he tells"
-                   + "you that you was here last night", 60 ));
+                   + "you that you was here last night", 60, false, "" ));
            
            outside.addItem(new Item("statue","A tall statue of the first"
-                   + " principal", 500));
+                   + " principal", 500, false, ""));
            outside.addItem(new Item("fotball", "An real fotball, not an"
-                   + "wiered american fotball", 0.7));
+                   + "wiered american fotball", 0.7, false, ""));
            
-           lab.addItem(new Item("Meth", "A batch of crystall math", 0.5));
-           lab.addItem(new Item("bottle", "Clean chemestry bottles", 0.3));
-           lab.addItem(new Item("coat", "A white lab coat", 1.0));
+           lab.addItem(new Item("Meth", "A batch of crystall math", 0.5, true,""
+                   + "You feel a tingeling scencation, your heart beats faster,"
+                   + "\nyou feel the rush, you can do anything!... atleast thats"
+                   + "what you belive"));
+           lab.addItem(new Item("bottle", "Clean chemestry bottles", 0.3, false,""));
+           lab.addItem(new Item("coat", "A white lab coat", 1.0, false, ""));
            
-           office.addItem(new Item("penn", "A golden penn", 0.4));
-           office.addItem(new Item("stappler", "A stappler machin", 0.7));
-           office.addItem(new Item("Ole","Ole Martin", 80));
+           office.addItem(new Item("penn", "A golden penn", 0.4, false, ""));
+           office.addItem(new Item("stappler", "A stappler machin", 0.7, false,""));
+           office.addItem(new Item("Ole","Ole Martin", 80, false, ""));
            
-           attic.addItem(new Item("mirror", "A dusty hand hell mirror", 1.5));
+           attic.addItem(new Item("mirror", "A dusty hand hell mirror", 1.5, false, ""));
            attic.addItem(new Item("omar", "A dusty person named Omar, "
                    + "he tells you to go to the library and find The Book"
-                   +  " of Thosend Throutes.", 90));
+                   +  " of Thosend Throutes.", 90, false, ""));
            
            theater.addItem(new Item("Macbook", "A new macBook Pro standing"
-                   + " on the teacher's desk", 2));
-           theater.addItem(new Item("Bottle", "A water bottle", 0.15));
+                   + " on the teacher's desk", 2, false, ""));
+           theater.addItem(new Item("Bottle", "An empty water bottle", 0.15, false, ""));
            
-           library.addItem(new Item("Java123", "Book named Java123", 7));
-           library.addItem(new Item("BlueJ", "Book named OOP with BlueJ", 2.5));
-           library.addItem(new Item("Cooking", "cook book named cooking", 4));
-           library.addItem(new Item("Electronics", "Book about electronics", 6));
+           library.addItem(new Item("Java123", "Book named Java123", 7, false, ""));
+           library.addItem(new Item("BlueJ", "Book named OOP with BlueJ", 2.5, false, ""));
+           library.addItem(new Item("Cooking", "cook book named cooking", 4, false, ""));
+           library.addItem(new Item("Electronics", "Book about electronics", 6, false, ""));
            library.addItem(new Item("BoTT", "BoTT short for Book of Thousend "
-                   + " Thruts", 5));
-           library.addItem(new Item("Selfies", "book of selfies", 3));
-           library.addItem(new Item("Meth123", "book about how to cook meth", 9));
-           library.addItem(new Item("Glasses", "forgotten flasses", 0.3));
+                   + " Thruts", 5, false, ""));
+           library.addItem(new Item("Selfies", "book of selfies", 3, false,  ""));
+           library.addItem(new Item("Meth123", "book about how to cook meth", 9, false, ""));
+           library.addItem(new Item("Glasses", "forgotten flasses", 0.3, false, ""));
            
-           dorm.addItem(new Item("Matt", "Matt greats you hello", 85));
+           dorm.addItem(new Item("Matt", "Matt greats you hello", 85, false, ""));
            
            myRoom.addItem(new Item("Wallet", "an empty wallet with the impression"
-                   + "of a condom in the skin", 0.25));
+                   + "of a condom in the skin", 0.25, false, ""));
            myRoom.addItem(new Item("Phone", "Phone with broken screen and 3 unseen"
-                   + " snap's on it", 0.35));
+                   + " snap's on it", 0.35, false, ""));
            myRoom.addItem(new Item("Notebook", "Notebook with someting unreadable"
-                   + " scribbled inside", 0.4));
+                   + " scribbled inside", 0.4, false, ""));
            myRoom.addItem(new Item("Headphones", "a pair of old sennheiser's "
-                   + "headphones", 1.7));
+                   + "headphones", 1.7, false, ""));
+           myRoom.addItem(new Item("bread", "a loaf of bread", 0.5, true, "You are no"
+                   + " longer tipsy or high."));
            
-           mattsRoom.addItem(new Item("joint", "A half smoken joint", 0.003));
-           mattsRoom.addItem(new Item("Socks", "A pair of dirty socks", 0.7));
-           mattsRoom.addItem(new Item("Weights", "A 20Kg weight", 20));
-           mattsRoom.addItem(new Item("Photo", "A photo of Matt's mom", 0.7));
+           mattsRoom.addItem(new Item("joint", "A half smoken joint", 0.003, true, "you "
+                   + "feel relaxed, you no longer have any worries."));
+           mattsRoom.addItem(new Item("Socks", "A pair of dirty socks", 0.7, false, ""));
+           mattsRoom.addItem(new Item("Weights", "A 20Kg weight", 20, false, ""));
+           mattsRoom.addItem(new Item("Photo", "A photo of Matt's mom", 0.7, false, ""));
+           mattsRoom.addItem(new Item("cookie", "A magic cookie, what does it do?",
+            0.004, true, "You feel happyer then you've been ever before. you "
+                    + "carrier cappacity has increased by 1Kg"));
            
-           commonRoom.addItem(new Item("TV", "A flatscreen TV", 7.5));
+           commonRoom.addItem(new Item("TV", "A flatscreen TV", 7.5, false, ""));
            
-           batheroom.addItem(new Item("Toothbrush", "your toothbrush", 0.2));
-           batheroom.addItem(new Item("Toiletbrush", "A toilet brush", 0.8));
+           batheroom.addItem(new Item("Toothbrush", "your toothbrush", 0.2, false, ""));
+           batheroom.addItem(new Item("Toiletbrush", "A toilet brush", 0.8, false, ""));
            
                    
         currentRoom = outside;  // start game outside
@@ -243,9 +252,9 @@ public class Game
         {
             player.look();
         }
-        else if (commandWord.equals("eat"))
+        else if (commandWord.equals("consume"))
         {
-            player.eat();
+            player.consume(command);
         }
         else if (commandWord.equals("take"))
         {

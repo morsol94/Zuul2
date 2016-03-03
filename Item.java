@@ -18,6 +18,8 @@ public class Item
     private String name;    //One word name.
     private String description;  //Longer description of the object.
     private double weigth;  //weigth of the item in Kg.
+    private boolean edible; //if the item is edible or not
+    private String eatEffect; //the effect of eating it.
     
     
     /**
@@ -28,11 +30,14 @@ public class Item
      * @param description The description of the object
      * @param weigth  The weight of the object in Kg.
      */
-    public Item(String name, String description, double weigth)
+    public Item(String name, String description, double weigth, boolean edible,
+             String eatEffect)
     {
         this.name = name;
         this.description = description;
         this.weigth = weigth;
+        this.edible = edible;
+        this.eatEffect = eatEffect;
     }
     
     
@@ -75,5 +80,17 @@ public class Item
     public String getItemDetails()
     {
         return this.getName()+ " - " + this.getDescription()+ " - " + this.getWeigth() +"Kg";
+    }
+    
+    
+    public boolean isEdible()
+    {
+        return this.edible;
+    }
+    
+    
+    public String getEatEffect()
+    {
+        return this.eatEffect;
     }
 }

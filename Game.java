@@ -255,6 +255,10 @@ public class Game
         {
             player.dropItem(command);
         }
+        else if (commandWord.equals("inventory"))
+        {
+            player.inventory();
+        }
         else if (commandWord.equals("quit"))
         {
             wantToQuit = quit(command);

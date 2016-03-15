@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.Iterator;
 
 /**
- * Class Room - a room in an adventure game.
+ * Class Room - a room in an adventure game.eat
  *
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  

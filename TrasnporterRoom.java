@@ -23,4 +23,13 @@ public class TrasnporterRoom extends Room
         super(description);
     }
     
+    
+    @Override
+    public Room getExit(String direction)
+    {
+        
+    }
+    
+    
+    
 }

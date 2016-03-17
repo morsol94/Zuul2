@@ -27,8 +27,12 @@ public class TrasnporterRoom extends Room
     @Override
     public Room getExit(String direction)
     {
-        
+        return findRandomRoom();
     }
+    
+    
+    private Room findRandomRoom()
+            
     
     
     

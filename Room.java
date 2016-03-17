@@ -163,6 +163,14 @@ public class Room
     {
         return items.getItemWeigth(item);
     }
+    
+    
+    protected HashMap getExits()
+    {
+        return exits;
+    }
+    
+    
             
           
            

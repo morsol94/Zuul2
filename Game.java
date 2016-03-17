@@ -23,13 +23,16 @@ public class Game
     private Player player;
     private Parser parser;
     private Room currentRoom;
+    private RoomRandomizer randomRoom;
 
+    
     /**
      * Create the game and initialise its internal map.
      */
     public Game()
     {
 
+        randomRoom = new RoomRandomizer();
         createRooms();
         parser = new Parser();
         player = new Player("Kniven", currentRoom);
@@ -41,7 +44,7 @@ public class Game
     private void createRooms()
     {
         Room outside, theater, pub, lab, office, basement, attic,
-                dorm, myRoom, mattsRoom, commonRoom, batheroom, library;
+                dorm, myRoom, mattsRoom, commonRoom, batheroom, library, closet;
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -65,6 +68,23 @@ public class Game
         batheroom = new Room("in the batheroom of your dorm, it looks like"
                 + "\n someone has used your towel");
         library = new Room("in the university library");
+        closet = new TrasnporterRoom("This is a magical romm,we dont know where you will end up", randomRoom);
+        
+        
+        //Adding rooms to the randoomRoom arraylist
+        randomRoom.addRooms(outside);
+        randomRoom.addRooms(theater);
+        randomRoom.addRooms(pub);
+        randomRoom.addRooms(lab);
+        randomRoom.addRooms(office);
+        randomRoom.addRooms(basement);
+        randomRoom.addRooms(library);
+        randomRoom.addRooms(myRoom);
+        randomRoom.addRooms(dorm);
+        randomRoom.addRooms(commonRoom);
+        randomRoom.addRooms(batheroom);
+        randomRoom.addRooms(attic);
+        
 
         //initializing room exits for outside
         outside.setExit("north", dorm);
@@ -80,6 +100,7 @@ public class Game
 
         //initializing exits for office
         office.setExit("east", lab);
+        office.setExit("north", closet);
 
         //initializing exits for attic
         attic.setExit("down", lab);
